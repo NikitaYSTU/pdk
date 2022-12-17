@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NLua;
 
-namespace pashicev1
+namespace lab1
 {
     public partial class Form1 : Form
     {
@@ -45,68 +45,68 @@ namespace pashicev1
             sigma = Convert.ToDouble(textBox6.Text);
             pdk = Convert.ToDouble(textBox12.Text);
 
-            textBox7.Text = Convert.ToString(calc_pdk_1(p, M));
-            textBox8.Text = Convert.ToString(calc_pdk_2(t_boil, M));
-            textBox9.Text = Convert.ToString(calc_pdk_3(n, M));
-            textBox10.Text = Convert.ToString(calc_pdk_4(sigma, M));
-            textBox11.Text = Convert.ToString(calc_pdk_5(t_melt, M));
+            textBox7.Text = Convert.ToString(pdk_1(p, M));
+            textBox8.Text = Convert.ToString(pdk_2(t_boil, M));
+            textBox9.Text = Convert.ToString(pdk_3(n, M));
+            textBox10.Text = Convert.ToString(pdk_4(sigma, M));
+            textBox11.Text = Convert.ToString(pdk_5(t_melt, M));
 
         }
 
 
-        public double calc_pdk_1(double p, double M)
+        public double pdk_1(double p, double M)
         {
             using (Lua luaState = new Lua())
             {
-                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\1\\pashicev1\\1.lua");
-                LuaFunction calc_pdk_pmFunc = luaState["calc_pdk_pm"] as LuaFunction;
-                double result = (double)calc_pdk_pmFunc.Call(p, M)[0];
-                i1 = (double)calc_pdk_pmFunc.Call(p, M)[0];
+                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\pdk\\pashicev1\\1.lua");
+                LuaFunction pdk_pmFunc = luaState["pdk_pm"] as LuaFunction;
+                double result = (double)pdk_pmFunc.Call(p, M)[0];
+                i1 = (double)pdk_pmFunc.Call(p, M)[0];
                 return result;
             }
         }
 
-        public double calc_pdk_2(double t_boil, double M)
+        public double pdk_2(double t_boil, double M)
         {
             using (Lua luaState = new Lua())
             {
-                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\1\\pashicev1\\1.lua");
-                LuaFunction calc_pdk_tboilFunc = luaState["calc_pdk_tboil"] as LuaFunction;
-                double result = (double)calc_pdk_tboilFunc.Call(t_boil, M)[0];
-                i2 = (double)calc_pdk_tboilFunc.Call(t_boil, M)[0];
+                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\pdk\\pashicev1\\1.lua");
+                LuaFunction pdk_tboilFunc = luaState["pdk_tboil"] as LuaFunction;
+                double result = (double)pdk_tboilFunc.Call(t_boil, M)[0];
+                i2 = (double)pdk_tboilFunc.Call(t_boil, M)[0];
                 return result;
             }
         }
-        public double calc_pdk_3(double n, double M)
+        public double pdk_3(double n, double M)
         {
             using (Lua luaState = new Lua())
             {
-                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\1\\pashicev1\\1.lua");
-                LuaFunction calc_pdk_nFunc = luaState["calc_pdk_n"] as LuaFunction;
-                double result = (double)calc_pdk_nFunc.Call(n, M)[0];
-                i3 = (double)calc_pdk_nFunc.Call(n, M)[0];
+                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\pdk\\pashicev1\\1.lua");
+                LuaFunction pdk_nFunc = luaState["pdk_n"] as LuaFunction;
+                double result = (double)pdk_nFunc.Call(n, M)[0];
+                i3 = (double)pdk_nFunc.Call(n, M)[0];
                 return result;
             }
         }
-        public double calc_pdk_4(double sigma, double M)
+        public double pdk_4(double sigma, double M)
         {
             using (Lua luaState = new Lua())
             {
-                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\1\\pashicev1\\1.lua");
-                LuaFunction calc_pdk_sigmaFunc = luaState["calc_pdk_sigma"] as LuaFunction;
-                double result = (double)calc_pdk_sigmaFunc.Call(sigma, M)[0];
-                i4 = (double)calc_pdk_sigmaFunc.Call(sigma, M)[0];
+                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\pdk\\pashicev1\\1.lua");
+                LuaFunction pdk_sigmaFunc = luaState["pdk_sigma"] as LuaFunction;
+                double result = (double)pdk_sigmaFunc.Call(sigma, M)[0];
+                i4 = (double)pdk_sigmaFunc.Call(sigma, M)[0];
                 return result;
             }
         }
-        public double calc_pdk_5(double t_melt, double M)
+        public double pdk_5(double t_melt, double M)
         {
             using (Lua luaState = new Lua())
             {
-                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\1\\pashicev1\\1.lua");
-                LuaFunction calc_pdk_tmeltFunc = luaState["calc_pdk_tmelt"] as LuaFunction;
-                double result = (double)calc_pdk_tmeltFunc.Call(t_melt, M)[0];
-                i5 = (double)calc_pdk_tmeltFunc.Call(t_melt, M)[0];
+                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\pdk\\pashicev1\\1.lua");
+                LuaFunction pdk_tmeltFunc = luaState["pdk_tmelt"] as LuaFunction;
+                double result = (double)pdk_tmeltFunc.Call(t_melt, M)[0];
+                i5 = (double)pdk_tmeltFunc.Call(t_melt, M)[0];
                 return result;
             }
         }
@@ -114,7 +114,7 @@ namespace pashicev1
         {
             using (Lua luaState = new Lua())
             {
-                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\1\\pashicev1\\1.lua");
+                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\pdk\\pashicev1\\1.lua");
                 LuaFunction error1fFunc = luaState["error1f"] as LuaFunction;
                 double result = (double)error1fFunc.Call(pdk, i1, M)[0];
                 return Math.Abs(result);
@@ -124,7 +124,7 @@ namespace pashicev1
         {
             using (Lua luaState = new Lua())
             {
-                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\1\\pashicev1\\1.lua");
+                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\pdk\\pashicev1\\1.lua");
                 LuaFunction error2fFunc = luaState["error2f"] as LuaFunction;
                 double result = (double)error2fFunc.Call(pdk, i2, M)[0];
                 return Math.Abs(result);
@@ -134,7 +134,7 @@ namespace pashicev1
         {
             using (Lua luaState = new Lua())
             {
-                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\1\\pashicev1\\1.lua");
+                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\pdk\\pashicev1\\1.lua");
                 LuaFunction error3fFunc = luaState["error3f"] as LuaFunction;
                 double result = (double)error3fFunc.Call(pdk, i3, M)[0];
                 return Math.Abs(result);
@@ -144,7 +144,7 @@ namespace pashicev1
         {
             using (Lua luaState = new Lua())
             {
-                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\1\\pashicev1\\1.lua");
+                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\pdk\\pashicev1\\1.lua");
                 LuaFunction error4fFunc = luaState["error4f"] as LuaFunction;
                 double result = (double)error4fFunc.Call(pdk, i4, M)[0];
                 return Math.Abs(result);
@@ -154,7 +154,7 @@ namespace pashicev1
         {
             using (Lua luaState = new Lua())
             {
-                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\1\\pashicev1\\1.lua");
+                luaState.DoFile("C:\\Users\\Cukier\\Desktop\\Дистант(или не всегда дистант)\\5 семестр\\пашичев\\pdk\\pashicev1\\1.lua");
                 LuaFunction error5fFunc = luaState["error5f"] as LuaFunction;
                 double result = (double)error5fFunc.Call(pdk, i5, M)[0];
                 return Math.Abs(result);

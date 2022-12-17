@@ -1,4 +1,4 @@
-﻿namespace pashicev1
+﻿namespace lab1
 {
     partial class Form1
     {
